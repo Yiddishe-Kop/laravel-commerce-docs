@@ -7,9 +7,25 @@ category: Guide
 
 Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information about installing and using modules in Nuxt.js.
 
-## Installation
+## Features
+
+
 
 Add `@nuxtjs/xxx` dependency to your project:
+
+<list :items="['guest cart', 'attach cart to user at login']"></list>
+
+This is so nice! <badge>a badge</badge>
+
+<alert>an alert</alert>
+
+<alert type="success">an alert</alert>
+
+<alert type="warning">an alert</alert>
+
+<alert type="danger">an alert</alert>
+
+<alert type="danger">You need to go to sleep!</alert>
 
 <code-group>
   <code-block label="Yarn" active>
