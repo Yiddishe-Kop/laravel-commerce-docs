@@ -1,0 +1,10 @@
+{
+  "title": "Laravel Commerce",
+  "url": "laravel-commerce.yiddishe-kop.com",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "yiddishe-kop/laravel-commerce-docs",
+  "twitter": "FeldAryeh"
+}
