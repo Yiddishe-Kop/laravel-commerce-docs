@@ -20,7 +20,16 @@ Your documentation has been created successfully!
 
 </alert>
 
+Thank you!
+
 ## Features
+
+Wow 🤯
+
+This is silly fast...
+
+## Introduction
+
 
 <list :items="features"></list>
 

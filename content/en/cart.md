@@ -1,7 +1,7 @@
 ---
-title: Setup
-description: ''
-position: 2
+title: Cart
+description: 'Using the shopping cart'
+position: 3
 category: Guide
 ---
 
