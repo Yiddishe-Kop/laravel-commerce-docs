@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Cascadia";
+  src: url("/Cascadia.ttf");
+}
+
+pre[class*="language-"] {
+  line-height: 2.2em;
+  padding: 0.85em 1.15em;
+}
