@@ -3,6 +3,8 @@ title: Products
 description: ''
 position: 3
 category: Guide
+version: 0.0.2
+fullscreen: false
 ---
 
 You can make any model purchasable - by implementing the `Purchasable` contract:

@@ -1,10 +1,13 @@
 ---
 title: Introduction
 description: ''
+badge: 'new'
+version: 1.0
 position: 1
 category: ''
-features:
+featuresDone:
   - Cart
+featuresTodo:
   - Orders
   - Coupons
   - Special Offers
@@ -12,8 +15,8 @@ features:
   - Payment Gateways
 ---
 
-<!-- <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
-<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/> -->
+<img src="/preview.png" class="dark-img" width="1280" height="640" alt=""/>
+<img src="/preview-light.png" class="light-img" width="1280" height="640" alt=""/>
 
 After searching for a simple ecommerce package for Laravel and not finding a lightweight simple to use solution - I decided to attempt to create one myself.
 
@@ -23,7 +26,8 @@ After searching for a simple ecommerce package for Laravel and not finding a lig
 
 We plan to add all the following features:
 
-<list :items="features"></list>
+<list :items="featuresDone" icon="IconCheckCircle"></list>
+<list :items="featuresTodo" icon="IconInformationCircle"></list>
 
 This package only implements the backend logic, and leaves you with full control over the frontend.
 
