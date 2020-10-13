@@ -1,65 +1,87 @@
 ---
 title: Cart
 description: 'Using the shopping cart'
-position: 3
+position: 4
 category: Guide
 ---
 
-Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information about installing and using modules in Nuxt.js.
+## Getting the Cart
 
-## Features
+You can access the cart anywhere, regardless if the user is logged in or a guest, using the facade:
 
+``` php
+use YiddisheKop\LaravelCommerce\Facades\Cart;
 
+$cart = Cart::get();
+```
 
-Add `@nuxtjs/xxx` dependency to your project:
+When the guest logs in, the cart will be attached to his account 👌.
 
-<list :items="['guest cart', 'attach cart to user at login']"></list>
+**Note**: If you want the cart to still be available after logout, you need to override the following method in `Auth\LoginController`:
+```php
+public function logout(Request $request) {
+    $this->guard()->logout();
 
-This is so nice! <badge>a badge</badge>
+    // keep cart data for after logout
+    $cartId = session()->get('cart');
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    session()->put('cart', $cartId);
 
-<alert>an alert</alert>
+    if ($response = $this->loggedOut($request)) {
+        return $response;
+    }
 
-<alert type="success">an alert</alert>
-
-<alert type="warning">an alert</alert>
-
-<alert type="danger">an alert</alert>
-
-<alert type="danger">You need to go to sleep!</alert>
-
-<code-group>
-  <code-block label="Yarn" active>
-
-  ```bash
-  yarn add @nuxtjs/xxx
-  ```
-
-  </code-block>
-  <code-block label="NPM">
-
-  ```bash
-  npm install @nuxtjs/xxx
-  ```
-
-  </code-block>
-  <code-block label="PHP">
-
-  ```php
-  composer require yiddishe-kop/laravel-commerce
-  ```
-
-  </code-block>
-</code-group>
-
-Then, add `@nuxtjs/xxx` to the `modules` section of `nuxt.config.js`:
-
-```js[nuxt.config.js]
-{
-  modules: [
-    '@nuxtjs/xxx'
-  ],
-  xxx: {
-    // Options
-  }
+    return $request->wantsJson()
+        ? new JsonResponse([], 204)
+        : redirect('/');
 }
 ```
+
+### Add products to cart
+Adding a product to the cart couldn't be simpler:
+```php
+Cart::add(Purchasable $product, int $quantity = 1);
+```
+Alternatively:
+```php
+$product->addToCart($quantity = 1);
+```
+If you add a product that already exists in the cart, we'll automatically just update the quantity 😎 .
+
+### Remove products from the cart
+```php
+Cart::remove(Purchasable $product);
+```
+Alternatively:
+```php
+$product->removeFromCart();
+```
+To empty the whole cart:
+```php
+Cart::empty();
+```
+### Access cart items
+You can access the cart items using the `items` relation:
+```php
+$cartItems = $cart->items;
+```
+To access the Product model from the cartItem, use the `model` relation (morphable):
+```php
+$product = $cart->items[0]->model;
+```
+## Calculating Cart Totals
+To calculate and persist the totals of the cart, use the `calculateTotals()` method:
+```php
+Cart::calculateTotals();
+```
+Now the cart has the following data up to date:
+```
+[
+  "items_total" => 3552
+  "tax_total" => 710.0
+  "coupon_total" => "0"
+  "grand_total" => 4262.0
+]
+```
+Deleted products will automatically get removed from the cart upon calculating the totals.

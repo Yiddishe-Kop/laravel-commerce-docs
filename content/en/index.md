@@ -4,35 +4,28 @@ description: ''
 position: 1
 category: ''
 features:
-  - Feature 1
-  - Feature 2
-  - Feature 3
+  - Cart
+  - Orders
+  - Coupons
+  - Special Offers
+  - Currencies
+  - Payment Gateways
 ---
 
-<img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
-<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
+<!-- <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
+<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/> -->
 
-[Module]() for [NuxtJS](https://nuxtjs.org).
+After searching for a simple ecommerce package for Laravel and not finding a lightweight simple to use solution - I decided to attempt to create one myself.
 
-<alert type="success">
-
-Your documentation has been created successfully!
-
-</alert>
-
-Thank you!
+[Laravel Commerce](https://github.com/Yiddishe-Kop/laravel-commerce) is an ecommerce package for Laravel with a simple and expressive API.
 
 ## Features
 
-Wow 🤯
-
-This is silly fast...
-
-## Introduction
-
+We plan to add all the following features:
 
 <list :items="features"></list>
 
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+This package only implements the backend logic, and leaves you with full control over the frontend.
 
-<icon-arrow-left/>
+
+<p class="flex items-center">Enjoy the docs in light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>

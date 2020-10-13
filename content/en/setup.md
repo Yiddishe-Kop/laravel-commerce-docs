@@ -1,49 +1,27 @@
 ---
-title: Setup
+title: Installation
 description: ''
 position: 2
-category: Guide
+category: Setup
 ---
 
-Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information about installing and using modules in Nuxt.js.
+You can install the package via composer:
 
-## Installation
+```bash
+composer require yiddishe-kop/laravel-commerce
+```
 
-Add `@nuxtjs/xxx` dependency to your project:
+## Config
 
-<code-group>
-  <code-block label="Yarn" active>
+To publish the commerce.php config file:
 
-  ```bash
-  yarn add @nuxtjs/xxx
-  ```
+```bash
+php artisan vendor:publish --provider="YiddisheKop\LaravelCommerce\CommerceServiceProvider" --tag="config"
+```
 
-  </code-block>
-  <code-block label="NPM">
+## Migrations
 
-  ```bash
-  npm install @nuxtjs/xxx
-  ```
-
-  </code-block>
-  <code-block label="PHP">
-
-  ```php
-  composer require yiddishe-kop/laravel-commerce
-  ```
-
-  </code-block>
-</code-group>
-
-Then, add `@nuxtjs/xxx` to the `modules` section of `nuxt.config.js`:
-
-```js[nuxt.config.js]
-{
-  modules: [
-    '@nuxtjs/xxx'
-  ],
-  xxx: {
-    // Options
-  }
-}
+You can also publish the migrations if you need to customize them:
+```bash
+php artisan vendor:publish --provider="YiddisheKop\LaravelCommerce\CommerceServiceProvider" --tag="migrations"
 ```
