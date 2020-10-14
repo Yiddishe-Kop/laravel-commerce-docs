@@ -15,7 +15,6 @@ export default theme({
       theme_color: '#ffad1f',
     },
     meta: {
-      description: 'An open source plug & play ecommerce package for Laravel',
       twitterCard: 'summary_large_image',
     }
   }
