@@ -3,6 +3,7 @@ title: Orders
 description: 'Using the shopping cart'
 position: 5
 category: Guide
+version: 1.0
 ---
 
 ## Overview

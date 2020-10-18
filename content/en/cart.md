@@ -3,6 +3,7 @@ title: Cart
 description: 'Using the shopping cart'
 position: 4
 category: Guide
+version: 1.0
 ---
 
 ## Getting the Cart

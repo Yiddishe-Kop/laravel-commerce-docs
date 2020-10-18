@@ -3,6 +3,7 @@ title: Currencies
 description: 'Supporting multiple currencies'
 position: 6
 category: Guide
+version: 1.0
 ---
 
 Laravel-commerce makes selling in multiple currencies is quite simple.
