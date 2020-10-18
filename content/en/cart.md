@@ -17,7 +17,10 @@ $cart = Cart::get();
 
 When the guest logs in, the cart will be attached to his account 👌.
 
-**Note**: If you want the cart to still be available after logout, you need to override the following method in `Auth\LoginController`:
+<alert>
+ If you want the cart to still be available after logout, you need to override the following method in `Auth\LoginController`:
+ </alert>
+
 ```php
 public function logout(Request $request) {
     $this->guard()->logout();
@@ -38,7 +41,9 @@ public function logout(Request $request) {
 }
 ```
 
-### Add products to cart
+<hr>
+
+### Add products to the cart
 Adding a product to the cart couldn't be simpler:
 ```php
 Cart::add(Purchasable $product, int $quantity = 1);
