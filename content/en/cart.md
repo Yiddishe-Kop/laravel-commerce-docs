@@ -16,6 +16,17 @@ use YiddisheKop\LaravelCommerce\Facades\Cart;
 $cart = Cart::get();
 ```
 
+Alternatively, you can use Laravel's dependency injection:
+
+``` php
+use YiddisheKop\LaravelCommerce\Cart;
+
+public function show(Request $request, Cart $cart) {
+  //...
+}
+```
+
+
 When the guest logs in, the cart will be attached to his account 👌.
 
 <alert>
