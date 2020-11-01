@@ -77,7 +77,9 @@ Cart::add($product, 1, ['size' => 'large']);
 
 You can add as many options as needed, they're stored as `json` to the database.
 
+<alert type="info">
 For more how prices are calculated for products with options, see [product options](/products#product-options).
+</alert>
 
 If you add a product that already exists in the cart, we'll automatically just update the quantity 😎 .
 
