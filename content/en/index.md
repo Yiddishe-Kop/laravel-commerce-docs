@@ -2,17 +2,18 @@
 title: Introduction
 description: ''
 badge: 'new'
-version: 1.0
+version: 1.1
 position: 1
 category: ''
 featuresDone:
   - Cart
-featuresTodo:
+  - Currencies
+  - Product options
+  - Payment Gateways
   - Orders
+featuresTodo:
   - Coupons
   - Special Offers
-  - Currencies
-  - Payment Gateways
 ---
 
 <img src="/preview.png" class="dark-img" width="1280" height="640" alt=""/>

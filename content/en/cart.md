@@ -3,7 +3,7 @@ title: Cart
 description: 'Using the shopping cart'
 position: 4
 category: Guide
-version: 1.0
+version: 1.1
 ---
 
 ## Getting the Cart
@@ -58,12 +58,27 @@ public function logout(Request $request) {
 ### Add products to the cart
 Adding a product to the cart couldn't be simpler:
 ```php
-Cart::add(Purchasable $product, int $quantity = 1);
+Cart::add(Purchasable $product, int $quantity = 1, $options = null);
 ```
 Alternatively:
 ```php
-$product->addToCart($quantity = 1);
+$product->addToCart($quantity = 1, $options = null);
 ```
+
+### Product Options
+Let's say your product comes in 3 sizes: small, medium & large; small costs $10, medium $20 & large $30. You can pass the selected option as an array to the `addToCart()` method:
+```php
+$product->addToCart(1, ['size' => 'large']);
+```
+Or  with the `Cart::add()` method:
+```php
+Cart::add($product, 1, ['size' => 'large']);
+```
+
+You can add as many options as needed, they're stored as `json` to the database.
+
+For more how prices are calculated for products with options, see [product options](/products#product-options).
+
 If you add a product that already exists in the cart, we'll automatically just update the quantity 😎 .
 
 ### Remove products from the cart
@@ -97,6 +112,7 @@ Now the cart has the following data up to date:
 [
   "items_total" => 3552
   "tax_total" => 710.0
+  "shipping_total" => 12,
   "coupon_total" => "0"
   "grand_total" => 4262.0
 ]

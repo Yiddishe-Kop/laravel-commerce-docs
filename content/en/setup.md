@@ -3,6 +3,7 @@ title: Installation
 description: ''
 position: 2
 category: Setup
+version: 1.0
 ---
 
 You can install the package via composer:
@@ -25,6 +26,11 @@ return [
   'tax' => [
     'rate'               => 20,
     'included_in_prices' => false,
+  ],
+
+  // default shipping amount
+  'shipping' => [
+    'cost' => 12
   ],
 
   /*
