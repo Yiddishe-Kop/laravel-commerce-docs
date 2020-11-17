@@ -1,7 +1,7 @@
 ---
 title: Currencies
 description: 'Supporting multiple currencies'
-position: 6
+position: 7
 category: Guide
 version: 1.0
 ---

@@ -43,7 +43,10 @@ By default there are 2 order statuses:
 In order to retrieve the completed orders, you should use this where clause:
 
 ```php
-$orders = Order::where('status', Order::STATUS_COMPLETED);
+$orders = Order::where('status', Order::STATUS_COMPLETED)->get();
+
+// or this query scope 😎
+$orders = Order::completed()->get();
 ```
 
 ### `HasOrders` trait

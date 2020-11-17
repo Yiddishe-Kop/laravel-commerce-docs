@@ -11,9 +11,9 @@ featuresDone:
   - Product options
   - Payment Gateways
   - Orders
+  - Special Offers
 featuresTodo:
   - Coupons
-  - Special Offers
 ---
 
 <img src="/preview.png" class="dark-img" width="1280" height="640" alt=""/>
