@@ -12,7 +12,7 @@ You can create special offers for products in your store, and they will be appli
 
 <alert type="warning">
 
-Only one offer per order is currently supported per order. So only the first applicable offer will be used.
+Only one offer per order is currently supported. So only the first applicable offer will be used.
 
 </alert>
 
@@ -27,6 +27,8 @@ $offer = Offer::create([
     'discount' => 20,
     'min' => 3,
     'product_type' => Product::class,
+    'valid_from' => now(),
+    'valid_to' => now()->addMonth(),
 ]);
 ```
 
@@ -39,6 +41,8 @@ $offer = Offer::create([
 | `discount` | `10` | The discount amount (percentage or fixed amount) |
 | `min` | `1` | Minimum amount of products to qualify for the offer |
 | `product_type` | `null` | The Product type (className) this offer applies to |
+| `valid_from` | `null` | Timestamp when offer is valid from |
+| `valid_to` | `null` | Timestamp when offer expires |
 
 
 <alert type="info">
