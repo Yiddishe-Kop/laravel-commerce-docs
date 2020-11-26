@@ -5,5 +5,9 @@
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "github": "Yiddishe-Kop/laravel-commerce"
+  "github": "Yiddishe-Kop/laravel-commerce",
+  "algolia": {
+    "apiKey": "575a6b67463e3e437e7db8c181d85d2d",
+    "indexName": "yiddishe-kop"
+  }
 }

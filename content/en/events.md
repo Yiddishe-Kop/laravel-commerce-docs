@@ -3,6 +3,7 @@ title: Events
 description: 'Handle events in your store'
 position: 8
 category: Guide
+version: 1.0
 ---
 
 ## Handling events in your store
