@@ -7,7 +7,7 @@
   },
   "github": "Yiddishe-Kop/laravel-commerce",
   "algolia": {
-    "apiKey": "88d53d15a467861357e359a17a722f19",
+    "apiKey": "575a6b67463e3e437e7db8c181d85d2d",
     "indexName": "yiddishe-kop"
   }
 }
