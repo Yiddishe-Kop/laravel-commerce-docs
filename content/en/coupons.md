@@ -27,7 +27,7 @@ $coupon = Coupon::create([
 ]);
 ```
 
-### Offer Attributes and Default values
+### Coupon Attributes and Default values
 
 | Attribute | Default value | Description |
 | --- | --- | --- |
