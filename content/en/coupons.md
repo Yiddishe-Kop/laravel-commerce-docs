@@ -77,6 +77,14 @@ try {
 }
 ```
 
+### Removing a coupon
+
+You guessed it:
+
+```php
+Cart::removeCoupon();
+```
+
 ### How Coupon Discount is Applied
 
 The Coupon is saved to the Order's `coupon_id` column.
