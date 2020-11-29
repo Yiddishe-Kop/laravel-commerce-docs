@@ -17,6 +17,7 @@ Here is a list of events fired:
 | Event | Description | Available Properties |
 | --- | --- | --- |
 | `OrderCompleted` | An order has been completed | `$order` - the Order |
+| `CouponRedeemed` | A coupon has been redeemed | `$coupon` - the Coupon |
 
 ### Listening to events
 
