@@ -102,3 +102,15 @@ This only makes a difference for `percentage` coupons, as `fixed` coupons are al
 </alert>
 
 The Order has a `coupon_total` column, where the calculated discount amount will be stored.
+
+So for example if you have an Order with a total of `1000`, and you apply a `percentage` Coupon of `20`%, your final Order will look like this:
+
+```php
+[
+  "items_total" => 1000
+  "tax_total" => 200
+  "shipping_total" => 12,
+  "coupon_total" => 242.4 // default - coupon is applied to everything
+  "grand_total" => 969.6 // after coupon discount
+]
+```
