@@ -1,7 +1,7 @@
 ---
 title: Events
 description: 'Handle events in your store'
-position: 8
+position: 9
 category: Guide
 version: 1.0
 ---

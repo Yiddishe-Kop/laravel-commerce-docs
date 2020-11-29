@@ -111,6 +111,9 @@ To calculate and persist the totals of the cart, use the `calculateTotals()` met
 ```php
 Cart::calculateTotals();
 ```
+
+This will handle the [Special Offers](/offers) & [Coupons](/coupons) for you 👌.
+
 Now the cart has the following data up to date:
 ```
 [

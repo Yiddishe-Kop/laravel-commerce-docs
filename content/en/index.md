@@ -12,7 +12,6 @@ featuresDone:
   - Payment Gateways
   - Orders
   - Special Offers
-featuresTodo:
   - Coupons
 ---
 
@@ -28,7 +27,6 @@ After searching for a simple ecommerce package for Laravel and not finding a lig
 We plan to add all the following features:
 
 <list :items="featuresDone" icon="IconCheckCircle"></list>
-<list :items="featuresTodo" icon="IconInformationCircle"></list>
 
 This package only implements the backend logic, and leaves you with full control over the frontend.
 

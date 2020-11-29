@@ -17,6 +17,9 @@ composer require yiddishe-kop/laravel-commerce
 The package has the following default config:
 
 ```php[config/commerce.php]
+
+use YiddisheKop\LaravelCommerce\Gateways\Example;
+
 return [
 
   // default currency
@@ -26,6 +29,12 @@ return [
   'tax' => [
     'rate'               => 20,
     'included_in_prices' => false,
+  ],
+
+  // Coupon settings
+  'coupon' => [
+    'include_tax' => true, // if to apply the coupon after taxes
+    'include_shipping' => true, // if to apply the coupon after shipping
   ],
 
   // default shipping amount
@@ -42,7 +51,7 @@ return [
   | Here's where you can configure the gateways in use.
   */
   'gateways' => [
-    PayPal::class => [],
+    Example::class => [], // demo gateway
   ],
 
   'prefix' => 'commerce', // routes prefix
