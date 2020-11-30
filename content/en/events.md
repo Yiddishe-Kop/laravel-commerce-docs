@@ -19,6 +19,12 @@ Here is a list of events fired:
 | `OrderCompleted` | An order has been completed | `$order` - the Order |
 | `CouponRedeemed` | A coupon has been redeemed | `$coupon` - the Coupon |
 
+<alert>
+
+The `CouponRedeemed` event is also used internally to increment the `times_used` of the [Coupon](/coupons).
+
+</alert>
+
 ### Listening to events
 
 Just add your listener to `EventServiceProvider`'s `$listen` array:
