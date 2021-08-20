@@ -24,11 +24,12 @@ After searching for a simple ecommerce package for Laravel and not finding a lig
 
 ## Features
 
-We plan to add all the following features:
+This package offers the following features:
 
 <list :items="featuresDone" icon="IconCheckCircle"></list>
 
 This package only implements the backend logic, and leaves you with full control over the frontend.
 
+Contributions are always welcome!
 
 <p class="flex items-center">Enjoy the docs in light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
