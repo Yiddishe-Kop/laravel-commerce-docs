@@ -7,20 +7,6 @@ export default theme({
   css: [
     './css/custom.css'
   ],
-  i18n: {
-    locales: () => [{
-      code: 'en',
-      iso: 'en-US',
-      file: 'en-US.js',
-      name: 'English'
-    }, {
-      code: 'he',
-      iso: 'he-IL',
-      file: 'he-IL.js',
-      name: 'עברית'
-    }],
-    defaultLocale: 'en'
-  },
   pwa: {
     manifest: {
       name: 'Laravel Commerce Docs',

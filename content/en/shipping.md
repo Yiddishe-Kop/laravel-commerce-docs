@@ -54,4 +54,4 @@ class ExampleShippingCalculator
 This method will be passed the `Order` as a parameter. You should return the charge in cents.
 
 
-See the included `ExampleShippingCalculator` for inspiration.
+See the included [`ExampleShippingCalculator`](https://github.com/Yiddishe-Kop/laravel-commerce/blob/master/src/Helpers/ExampleShippingCalculator.php) for inspiration.
