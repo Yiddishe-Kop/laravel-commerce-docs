@@ -34,15 +34,15 @@ $offer = Offer::create([
 
 ### Offer Attributes and Default values
 
-| Attribute | Default value | Description |
-| --- | --- | --- |
-| `name` | `"Special Offer"` | The name of the offer |
-| `type` | `"percentage"` | Type of offer, can be `'percentage'` or `'fixed'` |
-| `discount` | `10` | The discount amount (percentage or fixed amount) |
-| `min` | `1` | Minimum amount of products to qualify for the offer |
-| `product_type` | `null` | The Product type (className) this offer applies to |
-| `valid_from` | `null` | Timestamp when offer is valid from |
-| `valid_to` | `null` | Timestamp when offer expires |
+| Attribute      | Default value     | Description                                         |
+| -------------- | ----------------- | --------------------------------------------------- |
+| `name`         | `"Special Offer"` | The name of the offer                               |
+| `type`         | `"percentage"`    | Type of offer, can be `'percentage'` or `'fixed'`   |
+| `discount`     | `10`              | The discount amount (percentage or fixed amount)    |
+| `min`          | `1`               | Minimum amount of products to qualify for the offer |
+| `product_type` | `null`            | The Product type (className) this offer applies to  |
+| `valid_from`   | `null`            | Timestamp when offer is valid from                  |
+| `valid_to`     | `null`            | Timestamp when offer expires                        |
 
 
 <alert type="info">
@@ -99,3 +99,21 @@ So for example - if the product price is 1000, and the Offer is a 10% discount, 
 ```
 
 Note, that the `Order->items_total` and `Order->grand_total` will have the discount included.
+
+# Another way to handle offers
+
+Sometimes you may need to discount one item based if it is bought together with another item, etc.
+
+You can write more advanced offers logic with this method:
+
+In the config pass your own `OfferCalculator` class like so:
+
+```php
+'offers' => [
+    'calculator' => ExampleOffersCalculator::class,
+],
+```
+
+That class needs to implement a static `calculate` method. This method is passed the `$order`, and you are free to implement any logic you want.
+
+See the included [`ExampleOffersCalculator`](https://github.com/Yiddishe-Kop/laravel-commerce/blob/master/src/Helpers/ExampleOffersCalculator.php) for inspiration.
