@@ -122,3 +122,9 @@ So for example if you have an Order with a total of `1000`, and you apply a `per
   "grand_total" => 969.6 // after coupon discount
 ]
 ```
+
+## Restricting a coupon to a specific product
+
+You can restrict a coupon to a specific product, by setting the morphable `product_type` & `product_id` columns on the `Coupon`.
+
+Then the coupon will only discount that specific product within the order, and will throw an exception if that product isn't present in the order.
