@@ -56,10 +56,10 @@ $offer = Offer::create([
 
 ## Applying Offers
 
-To get the available offer for an Order:
+To get the available offers for an Order:
 
 ```php
-$offer = Offer::getFor($order);
+$offers = Offer::getFor($order);
 ```
 
 To check if an Offer is valid for an OrderItem:
