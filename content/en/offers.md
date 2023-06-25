@@ -1,20 +1,14 @@
 ---
 title: Special Offers
-description: 'Creating special offers'
+description: "Creating special offers"
 position: 6
 category: Guide
-version: 1.0
+version: 2.1
 ---
 
 ## Overview
 
 You can create special offers for products in your store, and they will be applied automatically when the cart totals are calculated.
-
-<alert type="warning">
-
-Only one offer per order is currently supported. So only the first applicable offer will be used.
-
-</alert>
 
 Use the `Offer` model to create special offers, like so:
 
@@ -27,6 +21,7 @@ $offer = Offer::create([
     'discount' => 20,
     'min' => 3,
     'product_type' => Product::class,
+    'product_ids' => [1,2,3],
     'valid_from' => now(),
     'valid_to' => now()->addMonth(),
 ]);
@@ -41,9 +36,9 @@ $offer = Offer::create([
 | `discount`     | `10`              | The discount amount (percentage or fixed amount)    |
 | `min`          | `1`               | Minimum amount of products to qualify for the offer |
 | `product_type` | `null`            | The Product type (className) this offer applies to  |
+| `product_ids`  | `null`            | The Product ids (array) this offer is limited to    |
 | `valid_from`   | `null`            | Timestamp when offer is valid from                  |
 | `valid_to`     | `null`            | Timestamp when offer expires                        |
-
 
 <alert type="info">
 
@@ -60,6 +55,7 @@ $offer = Offer::create([
 </alert>
 
 ## Applying Offers
+
 To get the available offer for an Order:
 
 ```php
@@ -87,6 +83,7 @@ You probably won't have to use the above methods yourself, as they all get handl
 </alert>
 
 ## How the discounts are stored
+
 After an Offer is applied to an OrderItem, the orderItem will have its `discount` set to the discount amount.
 
 So for example - if the product price is 1000, and the Offer is a 10% discount, the OrderItems will look like this:
