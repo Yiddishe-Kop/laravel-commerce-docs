@@ -37,6 +37,7 @@ $offer = Offer::create([
 | `min`          | `1`               | Minimum amount of products to qualify for the offer |
 | `product_type` | `null`            | The Product type (className) this offer applies to  |
 | `product_ids`  | `null`            | The Product ids (array) this offer is limited to    |
+| `active`       | `true`            | If the Offer is active                              |
 | `valid_from`   | `null`            | Timestamp when offer is valid from                  |
 | `valid_to`     | `null`            | Timestamp when offer expires                        |
 
