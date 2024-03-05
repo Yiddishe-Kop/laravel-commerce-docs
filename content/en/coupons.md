@@ -123,6 +123,20 @@ So for example if you have an Order with a total of `1000`, and you apply a `per
 ]
 ```
 
+## Coupon currencies
+When creating a coupon with a fixed discount, you may require different discount amounts for various currencies. To achieve this, utilize the `fixed_discount_currencies` field on the `Coupon` model:
+
+```php
+$coupon = Coupon::create([
+    'type' => Coupon::TYPE_FIXED,
+    'fixed_discount_currencies' => [
+        'USD' => 20,
+        'EUR' => 15,
+    ]
+]);
+```
+If the currency is not specified in the `fixed_discount_currencies` field, the default discount amount will be applied.
+
 ## Restricting a coupon to a specific product
 
 You can restrict a coupon to a specific product, by setting the morphable `product_type` & `product_id` columns on the `Coupon`.
